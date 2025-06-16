@@ -2,7 +2,7 @@ import { expect, test, describe } from 'vitest'
 import { add } from './calculator.ts'
 
 
-describe('String Calculator - Step 1', () => {
+describe('String Calculator - Step 1 - Empty string or single number', () => {
     test('should return 0 when the string is empty', () => {
         expect(add('')).toBe(0)
     })
@@ -15,5 +15,16 @@ describe('String Calculator - Step 1', () => {
         expect(add('1,2')).toBe(3)
     })
 
+})
+
+describe('String Calculator - Step 2 - Allowing any amount of numbers', () => {
+    test('should allow the add method to handle any amount of numbers.', () => {
+        expect(add('1,2,3,4,5,6,7,8,9,10')).toBe(55)
+    })
+
+    test('should throw error when any of the numbers in the string is not a number', () => {
+        expect(() => add('1,2,3,4,a,6,7,8,9,10')).toThrow('Invalid number')
+    })
 
 })
+
