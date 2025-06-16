@@ -1,0 +1,14 @@
+{
+  "name": "calculator-tdd",
+  "version": "1.0.0",
+  "description": "A simple calculator project",
+  "main": "index.js",
+  "author": "Abhishek V",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.3"
+  }
+}
