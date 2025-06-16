@@ -94,6 +94,18 @@ describe('String Calculator - Step 7 - Delimiters can be of any length', () => {
 })
 
 
+describe('String Calculator - Step 8 - Allow multiple delimiters', () => {
+    test('should allow the add method to handle any amount of numbers separated by delimiter', () => {
+        expect(add('//[*][%]\n1*2%3')).toBe(6)
+    })
+
+    test('should allow the add method to handle any amount of numbers separated by delimiter', () => {
+        expect(add('//[*][%][&]\n1*2%3&4')).toBe(10)
+    })
+
+})
+
+
 
 
 
