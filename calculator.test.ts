@@ -70,6 +70,19 @@ describe('String Calculator - Step 5 - Negative numbers', () => {
 })
 
 
+describe('String Calculator - Step 6 - Numbers bigger than 1000 should be ignored', () => {
+    test('should ignore numbers bigger than 1000', () => {
+        expect(add('2,1001')).toBe(2)
+    })
+
+    test('should include if the number is 1000', () => {
+        expect(add('2,1000,3')).toBe(1005)
+    })
+})
+
+
+
+
 
 
 

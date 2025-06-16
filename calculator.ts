@@ -18,11 +18,16 @@ function add(numbers: string) {
         throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(', ')}`)
     }
 
-    return numbersArray.reduce((sum, number) => {
-        if (isNaN(parseInt(number))) {
+
+    return numbersArray.reduce((sum, numberString) => {
+        const number = parseInt(numberString)
+        if (isNaN(number)) {
             throw new Error('Invalid number')
         }
-        return sum + parseInt(number)
+        if (number > 1000) {
+            return sum
+        }
+        return sum + number
     }, 0)
 }
 
