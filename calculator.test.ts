@@ -57,6 +57,18 @@ describe('String Calculator - Step 4 - Support different delimiters', () => {
 
 })
 
+describe('String Calculator - Step 5 - Negative numbers', () => {
+
+    test('should throw error when the string is negative', () => {
+        expect(() => add('1,-2')).toThrow('Negative numbers not allowed: -2')
+    })
+
+    test('should throw error with all negative numbers in the error message', () => {
+        expect(() => add('1,-2,-3')).toThrow('Negative numbers not allowed: -2, -3')
+    })
+
+})
+
 
 
 

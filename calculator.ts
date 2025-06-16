@@ -13,6 +13,11 @@ function add(numbers: string) {
         numbersArray = numbers.split(/[,\n]/);
     }
 
+    const negativeNumbers = numbersArray.filter(number => parseInt(number) < 0);
+    if (negativeNumbers.length > 0) {
+        throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(', ')}`)
+    }
+
     return numbersArray.reduce((sum, number) => {
         if (isNaN(parseInt(number))) {
             throw new Error('Invalid number')
