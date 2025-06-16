@@ -6,9 +6,18 @@ function add(numbers: string) {
     let numbersArray: string[];
     if (numbers.startsWith('//')) {
         const newLineIndex = numbers.indexOf('\n');
-        const customDelimiter = numbers.substring(2, newLineIndex);
-        const numbersPart = numbers.substring(newLineIndex + 1);
-        numbersArray = numbersPart.split(customDelimiter);
+        const delimiterPart = numbers.substring(2, newLineIndex);
+
+        // Check if delimiter is in square brackets
+        if (delimiterPart.startsWith('[') && delimiterPart.endsWith(']')) {
+            const customDelimiter = delimiterPart.slice(1, -1); // Remove [ and ]
+            const numbersPart = numbers.substring(newLineIndex + 1);
+            numbersArray = numbersPart.split(customDelimiter);
+        } else {
+            const customDelimiter = delimiterPart;
+            const numbersPart = numbers.substring(newLineIndex + 1);
+            numbersArray = numbersPart.split(customDelimiter);
+        }
     } else {
         numbersArray = numbers.split(/[,\n]/);
     }

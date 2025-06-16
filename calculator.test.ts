@@ -81,6 +81,17 @@ describe('String Calculator - Step 6 - Numbers bigger than 1000 should be ignore
 })
 
 
+describe('String Calculator - Step 7 - Delimiters can be of any length', () => {
+    test('should allow the add method to handle any amount of numbers separated by delimiter', () => {
+        expect(add('//[***]\n1***2***3')).toBe(6)
+    })
+
+    test('should allow the add method to handle any amount of numbers separated by delimiter', () => {
+        expect(add('//[***]\n1***2***3')).toBe(6)
+    })
+
+
+})
 
 
 
