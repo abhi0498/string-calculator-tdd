@@ -2,7 +2,18 @@ function add(numbers: string) {
     if (numbers === '') {
         return 0
     }
-    return numbers.split(/[\n,]/).reduce((sum, number) => {
+
+    let numbersArray: string[];
+    if (numbers.startsWith('//')) {
+        const newLineIndex = numbers.indexOf('\n');
+        const customDelimiter = numbers.substring(2, newLineIndex);
+        const numbersPart = numbers.substring(newLineIndex + 1);
+        numbersArray = numbersPart.split(customDelimiter);
+    } else {
+        numbersArray = numbers.split(/[,\n]/);
+    }
+
+    return numbersArray.reduce((sum, number) => {
         if (isNaN(parseInt(number))) {
             throw new Error('Invalid number')
         }

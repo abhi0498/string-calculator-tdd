@@ -36,5 +36,28 @@ describe('String Calculator - Step 3 - Allowing new lines between numbers', () =
     test('should throw error when any of the numbers in the string is not a number', () => {
         expect(() => add('1\n2,3,a')).toThrow('Invalid number')
     })
+
+    test('should throw error when the string is not a number', () => {
+        expect(() => add('1,\n')).toThrow('Invalid number')
+    })
 })
+
+describe('String Calculator - Step 4 - Support different delimiters', () => {
+    test('should allow the add method to handle any amount of numbers separated by delimiter', () => {
+        expect(add('//;\n1;2')).toBe(3)
+    })
+
+    test('should allow the add  any  delimiter', () => {
+        expect(add('//**\n1**2**3')).toBe(6)
+    })
+
+    test('should throw error when the string is not a number', () => {
+        expect(() => add('//;\n1;a')).toThrow('Invalid number')
+    })
+
+})
+
+
+
+
 
