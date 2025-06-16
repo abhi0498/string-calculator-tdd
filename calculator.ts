@@ -2,7 +2,7 @@ function add(numbers: string) {
     if (numbers === '') {
         return 0
     }
-    return numbers.split(',').reduce((sum, number) => {
+    return numbers.split(/[\n,]/).reduce((sum, number) => {
         if (isNaN(parseInt(number))) {
             throw new Error('Invalid number')
         }

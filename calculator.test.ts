@@ -28,3 +28,13 @@ describe('String Calculator - Step 2 - Allowing any amount of numbers', () => {
 
 })
 
+describe('String Calculator - Step 3 - Allowing new lines between numbers', () => {
+    test('should allow the add method to handle any amount of numbers separated by new lines', () => {
+        expect(add('1,2\n3,4,5,6,7,8,9\n10')).toBe(55)
+    })
+
+    test('should throw error when any of the numbers in the string is not a number', () => {
+        expect(() => add('1\n2,3,a')).toThrow('Invalid number')
+    })
+})
+
