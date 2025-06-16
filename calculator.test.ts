@@ -106,6 +106,13 @@ describe('String Calculator - Step 8 - Allow multiple delimiters', () => {
 })
 
 
+describe('String Calculator - Step 9 - Allow multiple delimiters with length longer than one char', () => {
+    test('should allow the add method to handle any amount of numbers separated by delimiter', () => {
+        expect(add('//[***][%%%]\n1***2%%%3')).toBe(6)
+    })
+})
+
+
 
 
 
