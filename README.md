@@ -30,7 +30,7 @@ This project implements a string calculator that can add numbers from a string i
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/abhi0498/string-calculator-tdd
 cd string-tdd
 
 # Install dependencies
